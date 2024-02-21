@@ -16,13 +16,15 @@ openai.api_key = os.getenv('OPENAI_API_KEY')
 # )
 
 def get_completion_from_messages(messages, model="gpt-3.5-turbo", temperature=0):
-    response = openai.chat.completions.create(
+    response = openai.chat.completions.create( #openai.ChatCompletion.create
         model= model,
         messages = messages,
         temperature = temperature
     )
 
     return response.choices[0].message.content
+            # response.choices[0].text.strip()
+            # response.choices[0].message['content']
 
 context = [ {'role':'system', 'content':"나한테 인사해줘."} ]
 

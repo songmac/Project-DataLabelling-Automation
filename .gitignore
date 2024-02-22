@@ -7,6 +7,9 @@
 *.exe
 *.ipynb
 *.pkl
+*.json
+*.txt
+*.pyc
 
 
 #제외할 폴더명
@@ -14,4 +17,5 @@ ignore/
 
 # 제외할 파일명
 .env
+
 

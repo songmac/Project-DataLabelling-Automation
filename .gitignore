@@ -11,12 +11,13 @@
 *.txt
 *.pyc
 
-
 #제외할 폴더명
 ignore/
 credentials/
+dlap/
 
 # 제외할 파일명
 .env
+.cfg
 
 

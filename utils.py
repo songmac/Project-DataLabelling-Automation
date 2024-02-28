@@ -1,5 +1,4 @@
-# module
-# check_token.py
+# pack of modules
 
 def calculate_cost(prompt_length, response_length, model):
     """

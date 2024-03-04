@@ -11,10 +11,10 @@ from utils import calculate_cost
 from dotenv import load_dotenv # .env 파일에서 환경 변수를 로드하기 위한 Python 라이브러리
 
 # .env 파일 및 서비스 계정 정보 로드
-load_dotenv('./project/credentials/.env')  # env 파일은 credentials에 위치
+load_dotenv('./credentials/.env')  # env 파일은 credentials에 위치
 
 # Google Cloud Platform 설정
-SERVICE_ACCOUNT_FILE = './project/credentials/bustling-vim-415105-83d345abec9e.json' #[개별입력] json key file명
+SERVICE_ACCOUNT_FILE = './credentials/bustling-vim-415105-83d345abec9e.json' #[개별입력] json key file명
 """
 서비스 계정 파일 (SERVICE_ACCOUNT_FILE) 설정 방법
 : 다운로드한 JSON 파일을 프로젝트의 credentials 폴더 내에 저장하고, 
@@ -84,14 +84,20 @@ def read_spreadsheet(spreadsheet_url):
     sheet = spreadsheet.sheet1
     return sheet.get_all_records()
 
-def analyze_sentiment(data, file_name):
+def analyze_sentiment(data):
     openai.api_key = os.getenv('OPENAI_API_KEY')
     updated_data = []
     total_prompt_length, total_response_length = 0, 0
 
     for item in data:
         text = item['morphs_sentence']
-        response = openai.chat.completions.create(model="gpt-3.5-turbo", messages=[{"role": "system", "content": "분석 요청"}, {"role": "user", "content": text}], temperature=0, max_tokens=1000)
+        response = openai.chat.completions.create(
+            model="gpt-3.5-turbo", 
+            messages=[{"role": "system", "content": """이 텍스트의 감정을 분석해주세요. 
+                     중립적인 감정은 긍정적이거나 부정적인 감정이 명확하지 않은 상태로, 
+                     객관적 정보 전달 또는 상황설명에 주로 사용됩니다.
+                     """}, 
+                      {"role": "user", "content": text}], temperature=0, max_tokens=1000)
         sentiment = response.choices[0].message.content
         sentiment_label = 'p' if '긍정' in sentiment else 'n' if '부정' in sentiment else 'o'
         item['gpt_analysis'] = sentiment_label 
@@ -126,7 +132,7 @@ if __name__ == '__main__':
     spreadsheet_info = find_and_convert_csv_files(folder_id)
     for file_name, spreadsheet_url in spreadsheet_info:
         data = read_spreadsheet(spreadsheet_url)
-        sentiment_analysis_results, total_cost = analyze_sentiment(data, file_name)
+        sentiment_analysis_results, total_cost = analyze_sentiment(data)
         save_results(spreadsheet_url, sentiment_analysis_results)
         print(f"파일명: {file_name}, 스프레드시트 URL: {spreadsheet_url}, 총 비용: ${total_cost:.4f}")
     print("모든 파일의 분석이 완료되었습니다. 각 스프레드 시트를 확인해주세요.")

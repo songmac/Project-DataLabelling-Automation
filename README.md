@@ -18,9 +18,11 @@ Google API와 OpenAI API를 활용해 감정 분석하는 자동화 프로세스
 
 # 프로젝트 개념도
 <div align="center">
+    
 ![감정 분석 프로세스](https://github.com/songmac/Project-DataLabelling-Automation/assets/113491089/4924fc8f-089e-483e-a337-53431136e2f6)
 ![랭체인을 활용한 데이터셋 감정사전 카테고리 분류 자동화 프로세스](https://velog.velcdn.com/images/ji1kang/post/18511b9c-7b5f-44de-9ba2-b5572d4df149/image.png)
-</div>div>
+
+</div>
 
 1. Input Data : 라벨링할 Raw Text
 2. Give Instruction : 라벨링 가이드라인을 프롬프트에 작성 

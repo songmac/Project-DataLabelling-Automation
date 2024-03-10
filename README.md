@@ -1,4 +1,4 @@
-![image](https://github.com/songmac/Project-DataLabelling-Automation/assets/113491089/4924fc8f-089e-483e-a337-53431136e2f6)# 프로젝트 계획서
+# 프로젝트 계획서
 Google API와 OpenAI API를 활용해 감정 분석하는 자동화 프로세스를 구현
 
 # 프로젝트명
@@ -17,8 +17,7 @@ Google API와 OpenAI API를 활용해 감정 분석하는 자동화 프로세스
 - 시간/비용 소모적인 감정분석 라벨링을 ChatGPT를 활용하여 수행함으로써 업무 효율성 증대를 꾀함
 
 # 프로젝트 개념도
-![감정 분석 프로세스](https://dacon.s3.ap-northeast-2.amazonaws.com/attach/talkboard/1/403812/1676414877542382.png)
-
+![감정 분석 프로세스](https://github.com/songmac/Project-DataLabelling-Automation/assets/113491089/4924fc8f-089e-483e-a337-53431136e2f6)
 ![랭체인을 활용한 데이터셋 감정사전 카테고리 분류 자동화 프로세스](https://velog.velcdn.com/images/ji1kang/post/18511b9c-7b5f-44de-9ba2-b5572d4df149/image.png)
 
 1. Input Data : 라벨링할 Raw Text

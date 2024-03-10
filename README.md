@@ -30,9 +30,7 @@
 
 - Google 스프레드 시트의 데이터를 Python과 OpenAI API를 활용해 감정 분석하는 자동화 프로세스를 구현
 
-![감정 분석 프로세스](https://prod-files-secure.s3.us-west-2.amazonaws.com/81a3ccac-627f-46a3-b35f-93293d540f36/944f03d4-ba46-4eae-a040-5611a46d92d5/Untitled.png)
-
-[출처: dacon.io](https://dacon.io/forum/407824)
+![감정 분석 프로세스]([https://prod-files-secure.s3.us-west-2.amazonaws.com/81a3ccac-627f-46a3-b35f-93293d540f36/944f03d4-ba46-4eae-a040-5611a46d92d5/Untitled.png](https://dacon.s3.ap-northeast-2.amazonaws.com/attach/talkboard/1/403812/1676414877542382.png))
 
 ![랭체인을 활용한 데이터셋 감정사전 카테고리 분류 자동화 프로세스(예시)](https://velog.velcdn.com/images/ji1kang/post/18511b9c-7b5f-44de-9ba2-b5572d4df149/image.png)
 

@@ -1,0 +1,14 @@
+__pycache__
+credentials/
+ignore/
+
+
+original_data/
+result_data/
+test_data/
+
+
+ignore_script/
+
+
+*.txt
